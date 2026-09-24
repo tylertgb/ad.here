@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — from ad.here Brand Guidelines, April 2026 */
+  --color-navy: #0b1b35;
+  --color-navy-soft: #142544;
+  --color-navy-line: #24365a;
+  --color-coral: #ff5c3a;
+  --color-coral-dim: #e14e2f;
+  --color-gold: #ffd166;
+  --color-paper: #f7f3ec;
+  --color-paper-card: #ffffff;
+  --color-paper-line: #e7e0d3;
+  --color-ink: #0b1b35;
+  --color-ink-soft: #4d5972;
+  --color-muted-navy: #aab3c8;
+  --color-muted-navy-dim: #7c869e;
+  --color-off-white: #f7f3ec;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-navy);
+    color: var(--color-off-white);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-coral);
+    color: var(--color-off-white);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  /* Custom Scrollbar Styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  *:hover {
+    scrollbar-color: var(--color-coral) var(--color-navy-soft);
+  }
+
+  /* Webkit browsers (Chrome, Safari, Edge) */
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  *:hover::-webkit-scrollbar-thumb {
+    background: var(--color-coral);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--color-coral-dim);
+  }
+}
+
+@layer utilities {
+  .wrap {
+    max-width: 1536px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+
+  .text-outline-coral {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--color-coral);
+  }
+
+  @media (min-width: 640px) {
+    .wrap {
+      padding-inline: 32px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
