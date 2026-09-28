@@ -92,7 +92,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-muted-navy-dim border-t border-navy-line">
-          <span>© 2026 Ad.here. Ads that stick, results that last.</span>
+          <div className="flex flex-wrap gap-4">
+            <span>© 2026 Ad.here. Ads that stick, results that last.</span>
+            <a href="/privacy" className="hover:text-coral transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-coral transition-colors">Terms of Service</a>
+          </div>
           <span>Concept site: Phase 1 rollout in progress.</span>
           <span>
             Built with love by{" "}
