@@ -56,7 +56,7 @@ export default function HeroSlider() {
       {SLIDES.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${
             index === current ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
