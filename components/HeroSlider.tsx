@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const SLIDES = [
   {
@@ -94,7 +95,7 @@ export default function HeroSlider() {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a
+                <Link
                   href="#packages"
                   className="group inline-flex items-center px-7 py-3.5 bg-coral text-white text-base font-semibold rounded-full hover:bg-coral-dim transition-all duration-300 hover:shadow-xl hover:shadow-coral/20"
                 >
@@ -102,13 +103,13 @@ export default function HeroSlider() {
                   <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#network"
                   className="inline-flex items-center px-7 py-3.5 bg-white/5 backdrop-blur-sm border-2 border-white/30 text-white text-base font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>

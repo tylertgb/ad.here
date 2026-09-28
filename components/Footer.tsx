@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const COLUMNS = [
   {
@@ -48,7 +49,7 @@ export default function Footer() {
       <div className="wrap pt-28 pb-10 relative z-10">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           <div>
-            <a href="#" className="inline-block mb-5">
+            <Link href="/" className="inline-block mb-5">
               <Image
                 src="/logo-navy.png"
                 alt="ad.here"
@@ -57,7 +58,7 @@ export default function Footer() {
                 className="h-9 w-auto invert brightness-0 sepia-0"
                 style={{ filter: "brightness(0) invert(1)" }}
               />
-            </a>
+            </Link>
             <p className="text-sm text-muted-navy leading-relaxed max-w-[34ch] mt-3">
               Presence · Visibility · Immediacy indoor LED advertising
               across Ghana&apos;s malls.
@@ -73,12 +74,12 @@ export default function Footer() {
                 {col.links.map((l) =>
                   l.href ? (
                     <li key={l.label}>
-                      <a
+                      <Link
                         href={l.href}
                         className="text-sm text-muted-navy hover:text-off-white transition-colors"
                       >
                         {l.label}
-                      </a>
+                      </Link>
                     </li>
                   ) : (
                     <li key={l.label} className="text-sm text-white">
@@ -94,8 +95,8 @@ export default function Footer() {
         <div className="mt-16 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-muted-navy-dim border-t border-navy-line">
           <div className="flex flex-wrap gap-4">
             <span>© 2026 Ad.here. Ads that stick, results that last.</span>
-            <a href="/privacy" className="hover:text-coral transition-colors">Privacy Policy</a>
-            <a href="/terms" className="hover:text-coral transition-colors">Terms of Service</a>
+            <Link href="/privacy" className="hover:text-coral transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-coral transition-colors">Terms of Service</Link>
           </div>
           <span>Concept site: Phase 1 rollout in progress.</span>
           <span>
