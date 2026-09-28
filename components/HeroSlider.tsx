@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const SLIDES = [
   {
-    image: "/mall (6).jpg",
+    image: "/mall (3).jpg",
     title: "AI-Powered Media Buying",
     subtitle: "From Brief to Live in 35 Minutes",
     description: "Intelligent advertising placement across Ghana's premium indoor locations. No agency fees. No guesswork. Just results."
@@ -17,7 +17,7 @@ const SLIDES = [
     description: "Premium screens at entrances, food courts, and high-traffic corridors in Accra & Kumasi's busiest malls."
   },
   {
-    image: "/mall (3).jpg",
+    image: "/2.jpg",
     title: "Built for SMEs",
     subtitle: "Transparent. Affordable. Results-Driven",
     description: "Clear reporting. Honest pricing. Performance optimization. Media buying made accessible for every business."
