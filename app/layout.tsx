@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ad.here - Indoor LED Advertising Network | Accra & Kumasi Malls",
+  title: "ad.here - AI-Powered Media Buying Platform | Ghana",
   description:
-    "Ad.here owns and operates indoor LED screens inside Ghana's busiest malls — sold as multi-mall bundles, priced for SMEs, doubling as mall wayfinding.",
+    "Intelligent media placement for SMEs. From brief to live campaign in 35 minutes. Indoor LED screens across Accra & Kumasi malls. No agency fees. Transparent reporting.",
 };
 
 export default function RootLayout({

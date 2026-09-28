@@ -1,91 +1,86 @@
+import { Zap, DollarSign, LineChart, Shield, Clock, Target } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
-const ROWS = [
+const BENEFITS = [
   {
-    label: "Audience type",
-    adhere: "Captive shoppers, minutes of dwell time",
-    billboard: "Passing traffic, seconds of glance time",
-    vendor: "Varies — often passing traffic too",
+    icon: Zap,
+    title: "AI-Powered Speed",
+    description: "From brief to live in 35 minutes. No agency delays, no back-and-forth negotiations."
   },
   {
-    label: "Weather exposure",
-    adhere: "None-fully indoor",
-    billboard: "Full sun, rain, harmattan dust",
-    vendor: "Depends on install location",
+    icon: DollarSign,
+    title: "No Agency Fees",
+    description: "Direct platform access means you keep more of your budget for actual advertising."
   },
   {
-    label: "Entry point for SMEs",
-    adhere: "Single-mall packages available",
-    billboard: "Usually full-panel minimums",
-    vendor: "Varies by vendor",
+    icon: LineChart,
+    title: "Full Transparency",
+    description: "Real-time dashboards show exactly where your ads run and when. Complete proof-of-play reports."
   },
   {
-    label: "Payment flexibility",
-    adhere: "Mobile money & card, flexible plans",
-    billboard: "Typically bank transfer only",
-    vendor: "Typically bank transfer only",
+    icon: Shield,
+    title: "Indoor Protection",
+    description: "Weather-proof screens in climate-controlled environments. No sun fade, rain damage, or dust."
   },
   {
-    label: "Proof of placement",
-    adhere: "Play-out report per campaign",
-    billboard: "Photo evidence, manually requested",
-    vendor: "Varies by vendor",
+    icon: Clock,
+    title: "Captive Audience",
+    description: "Shoppers spend minutes in front of your ads, not seconds passing by on a road."
   },
   {
-    label: "Added shopper utility",
-    adhere: "Doubles as mall wayfinding (Locate)",
-    billboard: "None",
-    vendor: "Rare",
+    icon: Target,
+    title: "SME-Friendly",
+    description: "Start with one mall. Bundle packages available. Flexible payment options including mobile money."
   },
 ];
 
 export default function WhyAdhere() {
   return (
-    <section id="why" className="wrap py-20 sm:py-28">
-      <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-x-24 mb-14">
-        <div className="max-w-4xl w-full mb-3 md:mb-14">
+    <section id="why" className="py-24 sm:py-32 bg-white">
+      <div className="wrap">
+        <div className="max-w-3xl mx-auto flex flex-col items-center text-center mb-16">
           <SectionHeading title="Why Ad.here" />
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-            Built for how Ghanaian brands actually spend.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-navy mb-5 leading-tight tracking-tight">
+            Built for SMEs Who Need Results
           </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            No agency fees. No guesswork. No wasted spend. Just intelligent advertising that works.
+          </p>
         </div>
-        <p className="text-muted-navy leading-relaxed">
-          Not every business has a billboard-sized budget or a media-buying
-          team. Ad.here was designed around that reality.
-        </p>
-      </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-170 text-sm border-collapse">
-          <thead>
-            <tr className="border-b border-navy-line">
-              <th className="py-4 pr-4 text-left font-medium text-muted-navy-dim" />
-              <th className="py-4 pr-6 text-sm uppercase text-left font-semibold text-coral">
-                Ad.here indoor network
-              </th>
-              <th className="py-4 pr-6 text-sm uppercase text-left font-medium text-muted-navy-dim">
-                Outdoor billboards
-              </th>
-              <th className="py-4 text-sm uppercase text-left font-medium text-muted-navy-dim">
-                Typical signage vendor
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {ROWS.map((r) => (
-              <tr key={r.label} className="border-b border-navy-line">
-                <th className="py-4 pr-4 text-left font-medium text-muted-navy whitespace-nowrap">
-                  {r.label}
-                </th>
-                <td className="py-4 pr-6 text-gold font-medium">
-                  {r.adhere}
-                </td>
-                <td className="py-4 pr-6 text-muted-navy">{r.billboard}</td>
-                <td className="py-4 text-muted-navy">{r.vendor}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {BENEFITS.map((benefit) => {
+            const Icon = benefit.icon;
+            return (
+              <div
+                key={benefit.title}
+                className="bg-gray-50 p-8 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-sm bg-coral/10 flex items-center justify-center mb-6">
+                  <Icon className="w-6 h-6 text-coral" strokeWidth={2} />
+                </div>
+                <h3 className="text-lg font-semibold text-navy mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center px-7 py-3.5 bg-navy text-white text-base font-semibold rounded-full hover:bg-navy-soft transition-colors"
+          >
+            Get Started Today
+            <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

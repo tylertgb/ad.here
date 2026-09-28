@@ -48,81 +48,87 @@ const PACKAGES = [
 
 export default function Packages() {
   return (
-    <section id="packages" className="wrap py-20 sm:py-28">
-      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-x-24 mb-16 sm:mb-24">
-        <div className="max-w-3xl w-full">
-          <SectionHeading title="Packages & Bundles" />
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-            One rate card. As many malls as your campaign needs.
-          </h2>
+    <section id="packages" className="py-20 sm:py-28 bg-navy">
+      <div className="wrap">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-x-20 mb-16">
+          <div className="max-w-3xl w-full">
+            <SectionHeading title="Packages & Bundles" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-white">
+              One rate card. As many malls as your campaign needs.
+            </h2>
+          </div>
+          <p className="mt-2 lg:mt-5 text-gray-300 lg:text-right leading-relaxed max-w-[48ch] lg:max-w-none text-sm lg:text-base">
+            Bundle pricing rewards brands that run across more than one mall —
+            the more of the network you use, the lower your effective cost per
+            screen.
+          </p>
         </div>
-        <p className="mt-2 lg:mt-5 text-muted-navy lg:text-right leading-relaxed max-w-[48ch] lg:max-w-none">
-          Bundle pricing rewards brands that run across more than one mall —
-          the more of the network you use, the lower your effective cost per
-          screen.
-        </p>
-      </div>
 
-      <div className="grid lg:grid-cols-3 gap-x-10 gap-y-14 items-start">
-        {PACKAGES.map((p) => (
-          <div
-            key={p.name}
-            className={
-              p.featured
-                ? "relative lg:-mt-6 flex flex-col gap-6 rounded-[28px] bg-navy-soft p-9"
-                : "flex flex-col gap-6 rounded-[28px] p-9 border border-navy-line"
-            }
-          >
-            {p.featured && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-coral text-navy text-xs font-semibold px-4 py-1.5 rounded-full whitespace-nowrap">
-                Most booked
+        <div className="grid lg:grid-cols-3 gap-x-8 gap-y-14 items-start">
+          {PACKAGES.map((p) => (
+            <div
+              key={p.name}
+              className={
+                p.featured
+                  ? "relative lg:-mt-6 flex flex-col gap-6 rounded-lg bg-white p-9 shadow-xl"
+                  : "flex flex-col gap-6 rounded-lg p-9 bg-navy-soft border border-navy-line"
+              }
+            >
+              {p.featured && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-coral text-white text-xs font-semibold px-4 py-1.5 rounded-full whitespace-nowrap">
+                  Most booked
+                </div>
+              )}
+              <div>
+                <p
+                  className={`text-lg font-semibold ${
+                    p.featured ? "text-navy" : "text-white"
+                  }`}
+                >
+                  {p.name}
+                </p>
+                <p className={`mt-1 text-sm ${p.featured ? "text-slate-600" : "text-gray-400"}`}>
+                  {p.tag}
+                </p>
               </div>
-            )}
-            <div>
-              <p
-                className={`text-lg font-bold ${
-                  p.featured ? "text-off-white" : "text-off-white"
+              <div className="flex items-baseline gap-2">
+                <span className={`text-3xl font-semibold tracking-tight ${p.featured ? "text-coral" : "text-gold"}`}>
+                  {p.amt}
+                </span>
+                <span className={`text-xs ${p.featured ? "text-slate-500" : "text-gray-400"}`}>
+                  {p.per}
+                </span>
+              </div>
+              <ul className="flex flex-col gap-3">
+                {p.feats.map((f) => (
+                  <li
+                    key={f}
+                    className={`flex gap-2.5 text-sm leading-snug ${p.featured ? "text-slate-700" : "text-gray-300"}`}
+                  >
+                    <Check size={16} className={`shrink-0 mt-0.5 ${p.featured ? "text-coral" : "text-gold"}`} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#contact"
+                className={`mt-2 inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
+                  p.featured
+                    ? "bg-coral text-white hover:bg-coral-dim"
+                    : "border-2 border-gold/30 text-gold hover:border-gold hover:bg-gold/10"
                 }`}
               >
-                {p.name}
-              </p>
-              <p className="mt-1 text-sm text-muted-navy">{p.tag}</p>
+                {p.cta}
+              </a>
             </div>
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-gold tracking-tight">
-                {p.amt}
-              </span>
-              <span className="text-xs text-muted-navy-dim">{p.per}</span>
-            </div>
-            <ul className="flex flex-col gap-3">
-              {p.feats.map((f) => (
-                <li
-                  key={f}
-                  className="flex gap-2.5 text-sm text-muted-navy leading-snug"
-                >
-                  <Check size={16} className="text-gold shrink-0 mt-0.5" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="#contact"
-              className={`mt-2 inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
-                p.featured
-                  ? "bg-coral text-navy hover:bg-coral-dim"
-                  : "border-2 border-navy-line text-off-white hover:border-coral hover:text-coral"
-              }`}
-            >
-              {p.cta}
-            </a>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <p className="mt-14 text-sm text-muted-navy-dim max-w-[60ch]">
-        All packages are quoted per campaign length and screen count — no
-        reseller markup, no hidden production fees.
-      </p>
+        <p className="mt-14 text-sm text-gray-400 max-w-[60ch]">
+          All packages are quoted per campaign length and screen count — no
+          reseller markup, no hidden production fees.
+        </p>
+      </div>
     </section>
   );
 }

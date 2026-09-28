@@ -64,7 +64,7 @@ export default function Select({
       </button>
 
       {isOpen && (
-        <div className="absolute z-50 mt-2 w-full bg-paper-card border border-paper-line rounded-lg shadow-xl max-h-60 overflow-y-auto">
+        <div className="absolute z-50 mt-2 w-full bg-paper-card border border-paper-line rounded-lg shadow-xl max-h-60 overflow-y-auto scrollbar-hide">
           {options.map((option) => {
             const isSelected = selectedValue === option;
             return (

@@ -42,23 +42,23 @@ const INFO = [
 ];
 
 const fieldClass =
-  "w-full rounded-lg border border-paper-line bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink-soft/60 focus:border-coral focus:ring-2 focus:ring-coral/20 outline-none transition-all";
+  "w-full rounded-[20px] border border-paper-line bg-transparent px-5 py-4 text-sm text-ink placeholder:text-ink-soft/60 focus:border-coral focus:ring-2 focus:ring-coral/20 outline-none transition-all";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
   const [selectedMall, setSelectedMall] = useState("");
 
   return (
-    <section id="contact" className="bg-paper text-ink py-20 sm:py-28">
+    <section id="contact" className="bg-white text-ink py-20 sm:py-28">
       <div className="wrap grid lg:grid-cols-[1.2fr_0.8fr] gap-16">
         <div>
-          <div className="max-w-3xl w-full mb-6 md:mb-10">
+          <div className="max-w-3xl w-full mb-6 md:mb-8">
             <SectionHeading title="Get in touch" />
-            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight">
                Tell us which malls you want to be seen in.
             </h2>
           </div>
-          <p className="mt-5 text-ink-soft leading-relaxed max-w-[48ch] mb-10">
+          <p className="mt-5 text-slate-600 leading-relaxed max-w-[48ch] mb-10 text-sm lg:text-base">
             Send us a few details and we&apos;ll come back with mall
             availability, package pricing, and a proposed schedule.
           </p>
@@ -124,8 +124,8 @@ export default function Contact() {
               <Icon size={17} className="text-coral-dim shrink-0 mt-0.5 flex sm:hidden" />
               <Icon size={26} className="text-coral-dim shrink-0 mt-0.5 hidden sm:flex" />
               <div>
-                <h4 className="text-sm md:text-2xl font-semibold text-ink">{title}</h4>
-                <p className="mt-0.5 text-sm text-ink-soft">{content}</p>
+                <h4 className="text-sm md:text-lg font-semibold text-ink">{title}</h4>
+                <p className="mt-0.5 text-sm text-slate-600">{content}</p>
               </div>
             </div>
           ))}

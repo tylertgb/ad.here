@@ -6,13 +6,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { href: "#network", label: "Indoor Network" },
-  { href: "#packages", label: "Packages" },
-  { href: "#tenant-advantage", label: "Mall Brands" },
-  { href: "#locate", label: "Locate" },
-  { href: "#locations", label: "Locations" },
-  { href: "#why", label: "Why Ad.here" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#locate", label: "Locate" },
+  { href: "/#network", label: "Indoor Network" },
+  { href: "/#packages", label: "Packages" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Header() {
@@ -28,14 +26,14 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-shadow ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-navy/95 backdrop-blur shadow-[0_1px_0_rgba(255,255,255,0.08)]"
-          : "bg-navy"
+          : "bg-transparent"
       }`}
     >
       <div className="wrap flex items-center justify-between py-5">
-        <a href="#top" className="shrink-0">
+        <a href="#" className="shrink-0">
           <Image
             src="/logo-coral.png"
             alt="ad.here — Ads that stick, results that last"
@@ -61,7 +59,7 @@ export default function Header() {
         <div className="hidden lg:block">
           <a
             href="#contact"
-            className="inline-flex items-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-navy hover:bg-coral-dim transition-colors"
+            className="inline-flex items-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
           >
             Get a Proposal
           </a>
@@ -106,7 +104,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: LINKS.length * 0.05 + 0.1, duration: 0.3 }}
-                className="mt-2 inline-flex justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-navy hover:bg-coral-dim transition-colors"
+                className="mt-2 inline-flex justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
               >
                 Get a Proposal
               </motion.a>

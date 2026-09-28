@@ -45,20 +45,20 @@ export default function Footer() {
         />
       </div>
 
-      <div className="wrap pt-24 pb-6 relative z-10">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="wrap pt-28 pb-10 relative z-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           <div>
-            <a href="#top" className="inline-block mb-3.5">
+            <a href="#" className="inline-block mb-5">
               <Image
                 src="/logo-navy.png"
                 alt="ad.here"
                 width={130}
                 height={37}
-                className="h-8 w-auto invert brightness-0 sepia-0"
+                className="h-9 w-auto invert brightness-0 sepia-0"
                 style={{ filter: "brightness(0) invert(1)" }}
               />
             </a>
-            <p className="text-[13.5px] text-muted-navy-dim leading-relaxed max-w-[34ch] mt-2">
+            <p className="text-sm text-muted-navy leading-relaxed max-w-[34ch] mt-3">
               Presence · Visibility · Immediacy indoor LED advertising
               across Ghana&apos;s malls.
             </p>
@@ -66,10 +66,10 @@ export default function Footer() {
 
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h5 className="text-xs font-bold uppercase tracking-wide text-gold mb-3.5">
+              <h5 className="text-xs font-bold uppercase tracking-wide text-gold mb-5">
                 {col.title}
               </h5>
-              <ul className="flex flex-col gap-2.5">
+              <ul className="flex flex-col gap-3">
                 {col.links.map((l) =>
                   l.href ? (
                     <li key={l.label}>
@@ -91,7 +91,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-11 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs text-muted-navy-dim">
+        <div className="mt-16 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-muted-navy-dim border-t border-navy-line">
           <span>© 2026 Ad.here. Ads that stick, results that last.</span>
           <span>Concept site: Phase 1 rollout in progress.</span>
           <span>
