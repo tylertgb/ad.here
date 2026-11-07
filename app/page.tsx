@@ -20,29 +20,27 @@ export default function Home() {
         <section className="bg-gray-50">
           <div className="wrap">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              <div className="relative text-center bg-coral/10 py-12 px-8">
-                <span className="absolute top-4 right-4 text-xs font-semibold text-coral/40">01</span>
-                <div className="text-4xl lg:text-5xl font-semibold text-coral mb-2">35min</div>
-                <p className="text-sm lg:text-base text-slate-600 font-medium">Brief to Live Campaign</p>
-                <span className="text-xs text-slate-400 mt-2 block">Speed</span>
-              </div>
               <div className="relative text-center py-12 px-8">
-                <span className="absolute top-4 right-4 text-xs font-semibold text-slate-300">02</span>
-                <div className="text-4xl lg:text-5xl font-semibold text-gold mb-2">4+</div>
-                <p className="text-sm lg:text-base text-slate-600 font-medium">Premium Mall Locations</p>
-                <span className="text-xs text-slate-400 mt-2 block">Coverage</span>
+                <span className="absolute top-4 right-4 text-xs font-semibold text-slate-300">01</span>
+                <div className="text-4xl lg:text-5xl font-semibold text-coral mb-2">4</div>
+                <p className="text-sm lg:text-base text-slate-600 font-medium">Phase 1 malls across Accra & Kumasi</p>
+              </div>
+              <div className="relative text-center bg-coral/10 py-12 px-8">
+                <span className="absolute top-4 right-4 text-xs font-semibold text-coral/40">02</span>
+                <div className="text-4xl lg:text-5xl font-semibold text-coral mb-2">
+                  Up to <span className="text-coral">25%</span>
+                </div>
+                <p className="text-sm lg:text-base text-slate-600 font-medium">Save by bundling malls into one package</p>
               </div>
               <div className="relative text-center py-12 px-8">
                 <span className="absolute top-4 right-4 text-xs font-semibold text-slate-300">03</span>
-                <div className="text-4xl lg:text-5xl font-semibold text-coral mb-2">24/7</div>
-                <p className="text-sm lg:text-base text-slate-600 font-medium">Performance Monitoring</p>
-                <span className="text-xs text-slate-400 mt-2 block">Support</span>
+                <div className="text-4xl lg:text-5xl font-semibold text-coral mb-2">12 <span className="text-slate-600 text-2xl">hrs</span></div>
+                <p className="text-sm lg:text-base text-slate-600 font-medium">Daily on-screen airtime per campaign</p>
               </div>
               <div className="relative text-center py-12 px-8">
                 <span className="absolute top-4 right-4 text-xs font-semibold text-slate-300">04</span>
-                <div className="text-4xl lg:text-5xl font-semibold text-gold mb-2">100%</div>
-                <p className="text-sm lg:text-base text-slate-600 font-medium">Transparent Reporting</p>
-                <span className="text-xs text-slate-400 mt-2 block">Trust</span>
+                <div className="text-4xl lg:text-5xl font-semibold text-coral mb-2">2 <span className="text-slate-600 text-2xl">networks</span></div>
+                <p className="text-sm lg:text-base text-slate-600 font-medium">Indoor mall screens + outdoor portal</p>
               </div>
             </div>
           </div>

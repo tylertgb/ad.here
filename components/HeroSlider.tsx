@@ -7,21 +7,21 @@ import Link from "next/link";
 const SLIDES = [
   {
     image: "/mall (3).jpg",
-    title: "AI-Powered Media Buying",
-    subtitle: "From Brief to Live in 35 Minutes",
-    description: "Intelligent advertising placement across Ghana's premium indoor locations. No agency fees. No guesswork. Just results."
+    title: "Your brand, at eye level, inside the malls Accra already walks through.",
+    subtitle: "Indoor LED Network · Accra, Ghana",
+    description: "Ad.here owns and operates indoor LED screens inside Ghana's busiest malls sold as multi-mall bundles, discounted for the brands already trading inside those malls, and doubling as the directory shoppers use to find their way around."
   },
   {
     image: "/mall (2).jpg",
-    title: "Indoor LED Network",
-    subtitle: "Strategic Placement. Maximum Impact",
-    description: "Premium screens at entrances, food courts, and high-traffic corridors in Accra & Kumasi's busiest malls."
+    title: "Your brand, at eye level, inside the malls Accra already walks through.",
+    subtitle: "Ads that stick, results that last",
+    description: "Ad.here owns and operates indoor LED screens inside Ghana's busiest malls sold as multi-mall bundles, discounted for the brands already trading inside those malls, and doubling as the directory shoppers use to find their way around."
   },
   {
     image: "/2.jpg",
-    title: "Built for SMEs",
+    title: "Your brand, at eye level, inside the malls Accra already walks through.",
     subtitle: "Transparent. Affordable. Results-Driven",
-    description: "Clear reporting. Honest pricing. Performance optimization. Media buying made accessible for every business."
+    description: "Ad.here owns and operates indoor LED screens inside Ghana's busiest malls sold as multi-mall bundles, discounted for the brands already trading inside those malls, and doubling as the directory shoppers use to find their way around."
   }
 ];
 
@@ -99,7 +99,7 @@ export default function HeroSlider() {
                   href="#packages"
                   className="group inline-flex items-center px-7 py-3.5 bg-coral text-white text-base font-semibold rounded-full hover:bg-coral-dim transition-all duration-300 hover:shadow-xl hover:shadow-coral/20"
                 >
-                  Get Started
+                  See Packages &amp; Bundles
                   <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -108,7 +108,7 @@ export default function HeroSlider() {
                   href="#network"
                   className="inline-flex items-center px-7 py-3.5 bg-white/5 backdrop-blur-sm border-2 border-white/30 text-white text-base font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
-                  Learn More
+                  View Mall Network
                 </Link>
               </div>
             </div>

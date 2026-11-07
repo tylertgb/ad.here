@@ -4,27 +4,31 @@ import SectionHeading from "./SectionHeading";
 const STEPS = [
   {
     number: "01",
+    label: "Choose",
     icon: Upload,
-    title: "Submit Your Brief",
-    description: "Tell us about your campaign goals, target audience, and preferred malls. Takes less than 5 minutes."
+    title: "Pick your malls & package",
+    description: "Run in one mall or bundle several — Marina, West Hills, Kumasi, Achimota — on a single invoice."
   },
   {
     number: "02",
+    label: "Create",
     icon: Zap,
-    title: "AI Placement & Scheduling",
-    description: "Our platform automatically selects optimal screen locations and schedules based on your brief and traffic data."
+    title: "Send us your creative",
+    description: "Upload existing artwork, or use our in-house design support to build a loop-ready spot."
   },
   {
     number: "03",
+    label: "Schedule",
     icon: Monitor,
-    title: "Go Live in 35 Minutes",
-    description: "Your ad is deployed across selected screens. No agency middleman, no delays. Just results."
+    title: "We slot it into the loop",
+    description: "Your spot is placed by daypart and dwell zone — entrance, food court, or anchor-store corridor."
   },
   {
     number: "04",
+    label: "Report",
     icon: CheckCircle,
-    title: "Track Performance",
-    description: "Real-time dashboard shows exactly when and where your ads play, with full transparency and proof-of-play reports."
+    title: "Get proof of play",
+    description: "A play-out report confirms exactly when and where your ad ran, mailed by mail."
   },
 ];
 
@@ -35,10 +39,10 @@ export default function HowItWorks() {
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center mb-16">
           <SectionHeading title="How It Works" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-navy mb-5 leading-tight tracking-tight">
-            From Brief to Live in 35 Minutes
+            From brief to on-screen, in four steps.
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Our AI-powered platform automates the entire media buying process.
+            No production house, no separate billboard vendor, no guesswork on when your ad actually played.
           </p>
         </div>
 

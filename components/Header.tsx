@@ -7,11 +7,13 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { href: "/#locate", label: "Locate" },
   { href: "/#network", label: "Indoor Network" },
   { href: "/#packages", label: "Packages" },
-  { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
+  { href: "/#tenant-advantage", label: "Mall Brands" },
+  { href: "/#locate", label: "Locate" },
+  { href: "/#locations", label: "Locations" },
+  { href: "/#why", label: "Why Ad.here" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
