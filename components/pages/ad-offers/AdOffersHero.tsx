@@ -22,12 +22,10 @@ export default function AdOffersHero() {
           src="/mall (7).jpg"
           alt="Ad Offers"
           fill
-          className="object-cover"
+          className="object-cover opacity-20"
           priority
           quality={90}
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-navy/90 via-navy/85 to-navy/75" />
       </div>
 
       <div className="wrap relative z-10">

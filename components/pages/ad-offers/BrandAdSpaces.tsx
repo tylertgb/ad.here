@@ -103,7 +103,7 @@ export default function BrandAdSpaces() {
             <span className="font-semibold text-navy">Your rate is lower</span> - plus a rotating Featured Tenant Spotlight slot.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="shrink-0 px-5 py-2.5 bg-coral text-white text-sm font-semibold rounded-full hover:bg-coral-dim transition-colors"
           >
             Check my tenant rate
@@ -121,7 +121,7 @@ export default function BrandAdSpaces() {
             </p>
           </div>
           <Link
-            href="#contact"
+            href="/contact"
             className="shrink-0 px-6 py-3 bg-coral text-white text-sm font-semibold rounded-full hover:bg-coral-dim transition-colors"
           >
             Claim the offer

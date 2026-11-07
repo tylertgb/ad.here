@@ -7,14 +7,14 @@ const EXPLORE_CARDS = [
     title: "Brand spaces, event weeks, screen rental & screen purchase",
     description: "Every way onto an Ad.here screen — brand visibility, event weeks, screen rental, or buying your own.",
     linkText: "See all offers",
-    linkHref: "/#packages",
+    linkHref: "/ad-offers",
   },
   {
     label: "PACKAGES & PRICES",
     title: "Compare subscription terms and check out",
     description: "3, 6, and 12-month terms with stacking discounts, plus live checkout — see your exact rate before you commit.",
     linkText: "See pricing",
-    linkHref: "/#packages",
+    linkHref: "/packages-prices",
   },
   {
     label: "BLOG",

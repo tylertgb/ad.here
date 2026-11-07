@@ -6,19 +6,19 @@ import Link from "next/link";
 
 const SLIDES = [
   {
-    image: "/mall (3).jpg",
+    image: "/hero-1.jpeg",
     title: "Chale, your customers are at the mall. Where are you?",
     subtitle: "Indoor LED Network · Atlantic Mall & Marina Mall, Accra",
     description: "Indoor LED screens at prime entrances inside Atlantic Mall and Marina Mall — no skip button, just your brand in front of shoppers in buying mode. Pick a screen, a bundle, an event week, or a subscription, and check out online."
   },
   {
-    image: "/mall (2).jpg",
+    image: "/hero-2.jpeg",
     title: "Chale, your customers are at the mall. Where are you?",
     subtitle: "Indoor LED Network · Atlantic Mall & Marina Mall, Accra",
     description: "Indoor LED screens at prime entrances inside Atlantic Mall and Marina Mall — no skip button, just your brand in front of shoppers in buying mode. Pick a screen, a bundle, an event week, or a subscription, and check out online."
   },
   {
-    image: "/2.jpg",
+    image: "/hero-3.jpg",
     title: "Chale, your customers are at the mall. Where are you?",
     subtitle: "Indoor LED Network · Atlantic Mall & Marina Mall, Accra",
     description: "Indoor LED screens at prime entrances inside Atlantic Mall and Marina Mall — no skip button, just your brand in front of shoppers in buying mode. Pick a screen, a bundle, an event week, or a subscription, and check out online."

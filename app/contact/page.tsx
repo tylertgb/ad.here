@@ -15,11 +15,15 @@ export default function ContactPage() {
       <Header />
       <main>
         <ContactHero />
-        <section className="py-20 sm:py-28 bg-white">
+        <section id="enquiry-form" className="py-20 sm:py-28 bg-white">
           <div className="wrap">
             <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-start">
-              <ContactForm />
-              <ContactInfo />
+              <div id="contact-form">
+                <ContactForm />
+              </div>
+              <div id="contact-details">
+                <ContactInfo />
+              </div>
             </div>
           </div>
         </section>

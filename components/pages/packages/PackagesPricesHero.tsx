@@ -10,12 +10,10 @@ export default function PackagesPricesHero() {
           src="/mall (1).jpg"
           alt="Packages & Prices"
           fill
-          className="object-cover"
+          className="object-cover opacity-20"
           priority
           quality={90}
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-navy/95 via-navy/90 to-navy/80" />
       </div>
 
       <div className="wrap relative z-10">

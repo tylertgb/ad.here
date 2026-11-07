@@ -16,7 +16,7 @@ const LINKS = [
       { href: "/#what-you-get", label: "What You Get" },
       { href: "/#locations", label: "Mall Locations" },
       { href: "/#why", label: "Why Ad.here" },
-      { href: "/#packages", label: "Launch Offer" },
+      { href: "/#packages", label: "Packages" },
     ]
   },
   { 
@@ -35,7 +35,7 @@ const LINKS = [
     submenu: [
       { href: "/packages-prices#subscriptions", label: "Subscriptions" },
       { href: "/packages-prices#built-for-smes", label: "Built for SMEs" },
-      { href: "/#contact", label: "Buy a Slot" },
+      { href: "/packages-prices#buy-a-slot", label: "Buy a Slot" },
     ]
   },
   { 
@@ -135,7 +135,7 @@ export default function Header() {
 
         <div className="hidden lg:block">
           <Link
-            href="#contact"
+            href="/packages-prices#buy-a-slot"
             className="inline-flex items-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
           >
             Buy a Slot
@@ -214,7 +214,7 @@ export default function Header() {
                 transition={{ delay: LINKS.length * 0.05 + 0.1, duration: 0.3 }}
               >
                 <Link
-                  href="#contact"
+                  href="/packages-prices#buy-a-slot"
                   onClick={() => setOpen(false)}
                   className="mt-2 inline-flex justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
                 >

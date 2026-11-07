@@ -150,7 +150,7 @@ export default function Home() {
               <div className="relative group">
                 <div className="relative h-90 rounded-lg overflow-hidden">
                   <Image
-                    src="/mall (5).jpg"
+                    src="/mall (2).jpg"
                     alt="Food court placement"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

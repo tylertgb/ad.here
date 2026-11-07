@@ -90,43 +90,45 @@ export default function EventsAdSpaces() {
         </div>
 
         {/* Rate Comparison Table */}
-        <div className="mb-12 overflow-hidden rounded-lg border border-slate-200">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-navy text-white">
-                <th className="text-left px-6 py-4 text-sm font-semibold"></th>
-                <th className="text-center px-6 py-4 text-sm font-semibold uppercase tracking-wide">
-                  Atlantic Mall
-                </th>
-                <th className="text-center px-6 py-4 text-sm font-semibold uppercase tracking-wide">
-                  Marina Mall
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {RATE_COMPARISON.map((row, idx) => (
-                <tr key={idx} className="border-t border-slate-200 bg-white">
-                  <td className="px-6 py-4 text-sm text-slate-600 font-medium">
-                    {row.label}
-                  </td>
-                  <td className="px-6 py-4 text-center">
-                    <span className={`text-base font-semibold ${
-                      row.atlanticHighlight ? "text-coral" : "text-slate-400 line-through"
-                    }`}>
-                      {row.atlantic}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-center">
-                    <span className={`text-base font-semibold ${
-                      row.marinaHighlight ? "text-coral" : "text-slate-400 line-through"
-                    }`}>
-                      {row.marina}
-                    </span>
-                  </td>
+        <div className="mb-12 overflow-x-auto">
+          <div className="inline-block min-w-full overflow-hidden rounded-lg border border-slate-200">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-navy text-white">
+                  <th className="text-left px-6 py-4 text-sm font-semibold whitespace-nowrap"></th>
+                  <th className="text-center px-6 py-4 text-sm font-semibold uppercase tracking-wide whitespace-nowrap">
+                    Atlantic Mall
+                  </th>
+                  <th className="text-center px-6 py-4 text-sm font-semibold uppercase tracking-wide whitespace-nowrap">
+                    Marina Mall
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {RATE_COMPARISON.map((row, idx) => (
+                  <tr key={idx} className="border-t border-slate-200 bg-white">
+                    <td className="px-6 py-4 text-sm text-slate-600 font-medium whitespace-nowrap">
+                      {row.label}
+                    </td>
+                    <td className="px-6 py-4 text-center whitespace-nowrap">
+                      <span className={`text-base font-semibold ${
+                        row.atlanticHighlight ? "text-coral" : "text-slate-400 line-through"
+                      }`}>
+                        {row.atlantic}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 text-center whitespace-nowrap">
+                      <span className={`text-base font-semibold ${
+                        row.marinaHighlight ? "text-coral" : "text-slate-400 line-through"
+                      }`}>
+                        {row.marina}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <p className="text-center text-base text-slate-600 mb-12">
@@ -165,7 +167,7 @@ export default function EventsAdSpaces() {
               </p>
             </div>
             <Link
-              href="#contact"
+              href="/contact"
               className="shrink-0 px-7 py-3.5 bg-coral text-white text-base font-semibold rounded-full hover:bg-coral-dim transition-colors"
             >
               Request your event week

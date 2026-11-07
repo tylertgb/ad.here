@@ -8,15 +8,15 @@ const COLUMNS = [
       { label: "Brand ad spaces", href: "/ad-offers#brand-ad-spaces" },
       { label: "Events ad spaces", href: "/ad-offers#events-ad-spaces" },
       { label: "Ad.here screen rental", href: "/ad-offers#screen-rental" },
-      { label: "Purchase LED screen", href: "/ad-offers#purchase-led-screen" },
+      { label: "Purchase LED screen", href: "/ad-offers#purchase-screen" },
     ],
   },
   {
     title: "Network",
     links: [
-      { label: "What you get", href: "#what-you-get" },
-      { label: "Mall locations", href: "#locations" },
-      { label: "Why Ad.here", href: "#why" },
+      { label: "What you get", href: "/#what-you-get" },
+      { label: "Mall locations", href: "/#locations" },
+      { label: "Why Ad.here", href: "/#why" },
     ],
   },
   {
@@ -61,8 +61,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-navy leading-relaxed max-w-[34ch] mt-3">
-              Presence · Visibility · Immediacy indoor LED advertising
-              across Ghana&apos;s malls.
+              Presence · Visibility · Immediacy - indoor LED advertising at Atlantic Mall & Marina Mall, Accra.
             </p>
           </div>
 
@@ -100,6 +99,17 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-coral transition-colors">Terms of Service</Link>
           </div>
           <span>Concept site - 3 screens live across Atlantic Mall & Marina Mall.</span>
+          <span>
+            Built with love by{" "}
+            <a
+              href="https://brightgobka.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-coral hover:text-coral-dim transition-colors font-medium"
+            >
+              Tyler Bright
+            </a>
+          </span>
         </div>
       </div>
     </footer>
