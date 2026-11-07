@@ -30,11 +30,11 @@ const LINKS = [
     ]
   },
   { 
-    href: "/#packages", 
+    href: "/packages-prices", 
     label: "Packages & Prices",
     submenu: [
-      { href: "/#packages", label: "Subscriptions" },
-      { href: "/#packages", label: "Built for SMEs" },
+      { href: "/packages-prices#subscriptions", label: "Subscriptions" },
+      { href: "/packages-prices#built-for-smes", label: "Built for SMEs" },
       { href: "/#contact", label: "Buy a Slot" },
     ]
   },
