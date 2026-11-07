@@ -7,12 +7,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { href: "/#network", label: "Indoor Network" },
-  { href: "/#packages", label: "Packages" },
-  { href: "/#tenant-advantage", label: "Mall Brands" },
-  { href: "/#locate", label: "Locate" },
-  { href: "/#locations", label: "Locations" },
-  { href: "/#why", label: "Why Ad.here" },
+  { href: "/", label: "Home" },
+  { href: "/#packages", label: "Ad Offers" },
+  { href: "/#packages", label: "Packages & Prices" },
+  { href: "/blog", label: "Blog" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -64,7 +62,7 @@ export default function Header() {
             href="#contact"
             className="inline-flex items-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
           >
-            Get a Proposal
+            Buy a Slot
           </Link>
         </div>
 
@@ -114,7 +112,7 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className="mt-2 inline-flex justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
                 >
-                  Get a Proposal
+                  Buy a Slot
                 </Link>
               </motion.div>
             </nav>
