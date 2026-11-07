@@ -6,31 +6,48 @@ const MALLS = [
   { 
     city: "Accra", 
     name: "Marina Mall", 
-    screens: "12 screens",
-    locations: "Entrances & Food Court",
-    image: "/mall (1).jpg"
+    location: "Supermarket walkway entrance",
+    screens: "1 screen",
+    monthlyPrice: "₵4,500",
+    eventPrice: "₵1,050",
+    status: "Live",
+    image: "/malls/marinamall-main.png"
   },
   { 
     city: "Accra", 
-    name: "West Hills Mall", 
-    screens: "10 screens",
-    locations: "Main Corridors & Courts",
-    image: "/mall (2).jpg"
+    name: "Atlantic Mall - Phase 1", 
+    location: "Ground floor · Panda Mart entrance",
+    screens: "1 screen",
+    monthlyPrice: "₵3,500",
+    eventPrice: "₵950",
+    status: "Live",
+    image: "/malls/atlanticmall-main.jpg"
   },
-  { 
-    city: "Kumasi", 
-    name: "Kumasi City Mall", 
-    screens: "8 screens",
-    locations: "Central Areas & Entrance",
-    image: "/mall (3).jpg"
-  },
-  { 
-    city: "Accra", 
-    name: "Achimota Mall", 
-    screens: "10 screens",
-    locations: "High-Traffic Zones",
-    image: "/mall (4).jpg"
-  },
+  // Coming soon
+  // { 
+  //   city: "Accra", 
+  //   name: "Atlantic Mall - Phase 2", 
+  //   location: "1st floor · Game It Up entrance",
+  //   screens: "1 screen",
+  //   monthlyPrice: "₵3,500",
+  //   eventPrice: "₵950",
+  //   status: "Live",
+  //   image: "/malls/atlanticmall-main.jpg"
+  // },
+  // { 
+  //   city: "Kumasi", 
+  //   name: "Kumasi City Mall", 
+  //   screens: "8 screens",
+  //   locations: "Central Areas & Entrance",
+  //   image: "/malls/IMG_8485.jpeg"
+  // },
+  // { 
+  //   city: "Accra", 
+  //   name: "Achimota Mall", 
+  //   screens: "10 screens",
+  //   locations: "High-Traffic Zones",
+  //   image: "/malls/IMG_8488.jpeg"
+  // },
 ];
 
 export default function Locations() {
@@ -38,12 +55,16 @@ export default function Locations() {
     <section id="locations" className="py-24 sm:py-32 bg-gray-50">
       <div className="wrap">
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center mb-16">
-          <SectionHeading title="Our Network" />
+          <div className="inline-block mb-6 px-4 py-1.5 bg-navy/5 rounded-full">
+            <p className="text-xs uppercase tracking-widest text-navy font-semibold">
+              Where You'll Be Seen
+            </p>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-navy mb-5 leading-tight tracking-tight">
-            Premium Locations Across Accra & Kumasi
+            Three screens. Two malls.
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Phase 1 rollout covers Ghana's busiest malls with strategic screen placements.
+            Every screen sits at a prime, high-footfall entrance - not tucked in a corner.
           </p>
         </div>
 
@@ -51,9 +72,9 @@ export default function Locations() {
           {MALLS.map((mall, index) => (
             <div
               key={mall.name}
-              className="relative group bg-gray-50 rounded-lg overflow-hidden transition-all duration-300"
+              className="relative group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              <div className="relative h-80 lg:h-125 overflow-hidden">
+              <div className="relative h-80 lg:h-96 overflow-hidden">
                 <Image
                   src={mall.image}
                   alt={mall.name}
@@ -61,23 +82,27 @@ export default function Locations() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-navy/90 via-navy/40 to-transparent" />
-                <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
                   <MapPin size={14} className="text-coral" />
-                  <span className="text-xs font-semibold text-white">{mall.city}</span>
+                  <span className="text-xs font-semibold text-white uppercase tracking-wide">{mall.city}</span>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-semibold text-white mb-1">{mall.name}</h3>
-                </div>
+                {mall.status && (
+                  <div className="absolute top-4 right-4 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    {mall.status}
+                  </div>
+                )}
               </div>
               <div className="p-6">
-                <div className="flex items-center justify-between text-sm">
-                  <div>
-                    <p className="text-slate-500 text-xs mb-1">Coverage</p>
-                    <p className="text-navy font-semibold">{mall.screens}</p>
+                <h3 className="text-2xl font-semibold text-navy mb-2">{mall.name}</h3>
+                <p className="text-sm text-slate-500 mb-4">{mall.location}</p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-slate-600">Monthly</span>
+                    <span className="text-coral font-semibold text-lg">{mall.monthlyPrice}/month</span>
                   </div>
-                  <div className="text-right">
-                    <p className="text-slate-500 text-xs mb-1">Placement</p>
-                    <p className="text-navy font-semibold">{mall.locations}</p>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-slate-600">Event week</span>
+                    <span className="text-coral font-semibold text-lg">{mall.eventPrice}/week</span>
                   </div>
                 </div>
               </div>
@@ -85,10 +110,10 @@ export default function Locations() {
           ))}
         </div>
 
-        <p className="mt-12 text-center text-sm text-slate-500 max-w-2xl mx-auto">
-          Expanding to more locations across Ghana. Want your mall in our network?{" "}
-          <a href="#contact" className="font-semibold text-coral hover:text-coral-dim transition-colors">
-            Get in touch
+        <p className="mt-12 text-center text-sm text-slate-600 max-w-2xl mx-auto">
+          More malls join the network as it grows. Want yours on the list?{" "}
+          <a href="/contact" className="font-semibold text-coral hover:text-coral-dim transition-colors">
+            Get in touch →
           </a>
         </p>
       </div>

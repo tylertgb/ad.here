@@ -3,29 +3,30 @@ import Link from "next/link";
 
 const COLUMNS = [
   {
-    title: "Network",
+    title: "Ad Offers",
     links: [
-      { label: "Indoor network", href: "#network" },
-      { label: "Packages & bundles", href: "#packages" },
-      { label: "Ad.here Locate", href: "#locate" },
-      { label: "Mall locations", href: "#locations" },
+      { label: "Brand ad spaces", href: "/ad-offers#brand-ad-spaces" },
+      { label: "Events ad spaces", href: "/ad-offers#events-ad-spaces" },
+      { label: "Ad.here screen rental", href: "/ad-offers#screen-rental" },
+      { label: "Purchase LED screen", href: "/ad-offers#purchase-led-screen" },
     ],
   },
   {
-    title: "Business",
+    title: "Network",
     links: [
-      { label: "Mall brand advantage", href: "#tenant-advantage" },
+      { label: "What you get", href: "#what-you-get" },
+      { label: "Mall locations", href: "#locations" },
       { label: "Why Ad.here", href: "#why" },
-      { label: "LED supply", href: null },
-      { label: "Outdoor portal", href: null },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "Haatso, Accra, Ghana", href: null },
-      { label: "ad.hereghana@gmail.com", href: "mailto:ad.hereghana@gmail.com" },
-      { label: "Get a proposal", href: "#contact" },
+      { label: "Packages & prices", href: "/packages-prices" },
+      { label: "Blog", href: "/blog" },
+      { label: "adhereghana@gmail.com", href: "mailto:adhereghana@gmail.com" },
+      { label: "055 860 7807", href: "tel:+233558607807" },
+      { label: "Get a proposal", href: "/contact" },
     ],
   },
 ];
@@ -98,18 +99,7 @@ export default function Footer() {
             <Link href="/privacy" className="hover:text-coral transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-coral transition-colors">Terms of Service</Link>
           </div>
-          <span>Concept site: Phase 1 rollout in progress.</span>
-          <span>
-            Built with love by{" "}
-            <a
-              href="https://brightgobka.onrender.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-coral hover:text-coral-dim transition-colors font-medium"
-            >
-              Tyler Bright
-            </a>
-          </span>
+          <span>Concept site - 3 screens live across Atlantic Mall & Marina Mall.</span>
         </div>
       </div>
     </footer>

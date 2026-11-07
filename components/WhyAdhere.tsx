@@ -1,85 +1,73 @@
-import { Zap, DollarSign, LineChart, Shield, Clock, Target } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-
-const BENEFITS = [
-  {
-    icon: Zap,
-    title: "AI-Powered Speed",
-    description: "From brief to live in 35 minutes. No agency delays, no back-and-forth negotiations."
-  },
-  {
-    icon: DollarSign,
-    title: "No Agency Fees",
-    description: "Direct platform access means you keep more of your budget for actual advertising."
-  },
-  {
-    icon: LineChart,
-    title: "Full Transparency",
-    description: "Real-time dashboards show exactly where your ads run and when. Complete proof-of-play reports."
-  },
-  {
-    icon: Shield,
-    title: "Indoor Protection",
-    description: "Weather-proof screens in climate-controlled environments. No sun fade, rain damage, or dust."
-  },
-  {
-    icon: Clock,
-    title: "Captive Audience",
-    description: "Shoppers spend minutes in front of your ads, not seconds passing by on a road."
-  },
-  {
-    icon: Target,
-    title: "SME-Friendly",
-    description: "Start with one mall. Bundle packages available. Flexible payment options including mobile money."
-  },
-];
 
 export default function WhyAdhere() {
   return (
-    <section id="why" className="py-24 sm:py-32 bg-white">
+    <section id="why" className="py-24 sm:py-32 bg-navy text-white">
       <div className="wrap">
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center mb-16">
-          <SectionHeading title="Why Ad.here" />
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-navy mb-5 leading-tight tracking-tight">
-            Built for SMEs Who Need Results
+          <div className="inline-block mb-6 px-4 py-1.5 bg-white/10 rounded-full">
+            <p className="text-xs uppercase tracking-widest text-white font-semibold">
+              Why Ad.here
+            </p>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-5 leading-tight tracking-tight">
+            Built for how Ghanaian brands actually spend on advertising.
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            No agency fees. No guesswork. No wasted spend. Just intelligent advertising that works.
+          <p className="text-lg text-gray-300 leading-relaxed">
+            Built for businesses without a billboard budget or a media-buying team.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {BENEFITS.map((benefit) => {
-            const Icon = benefit.icon;
-            return (
-              <div
-                key={benefit.title}
-                className="bg-gray-50 p-8 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-sm bg-coral/10 flex items-center justify-center mb-6">
-                  <Icon className="w-6 h-6 text-coral" strokeWidth={2} />
-                </div>
-                <h3 className="text-lg font-semibold text-navy mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mt-12 text-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center px-7 py-3.5 bg-navy text-white text-base font-semibold rounded-full hover:bg-navy-soft transition-colors"
-          >
-            Get Started Today
-            <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+        {/* Comparison Table */}
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b border-white/10">
+                <th className="text-left py-4 px-4 text-sm font-semibold text-gray-400"></th>
+                <th className="text-left py-4 px-4 text-sm font-semibold text-coral uppercase tracking-wide">
+                  Ad.here Indoor Network
+                </th>
+                <th className="text-left py-4 px-4 text-sm font-semibold text-gray-400 uppercase tracking-wide">
+                  Traditional Outdoor Billboards
+                </th>
+                <th className="text-left py-4 px-4 text-sm font-semibold text-gray-400 uppercase tracking-wide">
+                  Typical Digital Signage Vendor
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-white/10">
+                <td className="py-6 px-4 text-sm font-medium text-gray-300">Audience type</td>
+                <td className="py-6 px-4 text-sm text-cyan-400">Captive shoppers, minutes of dwell time</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Passing traffic, seconds of glance time</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Varies - often passing traffic too</td>
+              </tr>
+              <tr className="border-b border-white/10">
+                <td className="py-6 px-4 text-sm font-medium text-gray-300">Weather exposure</td>
+                <td className="py-6 px-4 text-sm text-cyan-400">None - fully indoor</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Full sun, rain, harmattan dust</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Depends on install location</td>
+              </tr>
+              <tr className="border-b border-white/10">
+                <td className="py-6 px-4 text-sm font-medium text-gray-300">Entry point for SMEs</td>
+                <td className="py-6 px-4 text-sm text-cyan-400">Single-screen packages from ₵3,500/month, event weeks from ₵950</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Usually full-panel minimums</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Varies by vendor</td>
+              </tr>
+              <tr className="border-b border-white/10">
+                <td className="py-6 px-4 text-sm font-medium text-gray-300">Payment flexibility</td>
+                <td className="py-6 px-4 text-sm text-cyan-400">Mobile money & card, buy online in minutes</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Typically bank transfer only</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Typically bank transfer only</td>
+              </tr>
+              <tr>
+                <td className="py-6 px-4 text-sm font-medium text-gray-300">Proof of placement</td>
+                <td className="py-6 px-4 text-sm text-cyan-400">Play-out report every month</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Photo evidence, manually requested</td>
+                <td className="py-6 px-4 text-sm text-gray-400">Varies by vendor</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

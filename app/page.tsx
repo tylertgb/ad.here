@@ -3,11 +3,9 @@ import HeroSlider from "@/components/HeroSlider";
 import Locate from "@/components/Locate";
 import HowItWorks from "@/components/HowItWorks";
 import WhatYouGet from "@/components/WhatYouGet";
-import Packages from "@/components/Packages";
 import WhyAdhere from "@/components/WhyAdhere";
 import Locations from "@/components/Locations";
 import ExploreAdhere from "@/components/ExploreAdhere";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
@@ -185,8 +183,6 @@ export default function Home() {
         </section>
 
         <Locations />
-
-        <Packages />
         
         <WhyAdhere />
         
@@ -235,7 +231,6 @@ export default function Home() {
           </div>
         </section>
 
-        <Contact />
       </main>
       <Footer />
     </>
