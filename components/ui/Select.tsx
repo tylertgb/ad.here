@@ -64,7 +64,7 @@ export default function Select({
       </button>
 
       {isOpen && (
-        <div className="absolute z-50 mt-2 w-full bg-paper-card border border-paper-line rounded-lg shadow-xl max-h-60 overflow-y-auto scrollbar-hide">
+        <div className="absolute z-50 mt-2 w-full bg-paper-card border border-paper-line rounded-sm shadow-xl max-h-60 overflow-y-auto scrollbar-hide">
           {options.map((option) => {
             const isSelected = selectedValue === option;
             return (
@@ -72,7 +72,7 @@ export default function Select({
                 key={option}
                 type="button"
                 onClick={() => handleSelect(option)}
-                className={`w-full flex items-center justify-between px-4 py-3 text-sm text-left hover:bg-paper transition-colors first:rounded-t-lg last:rounded-b-lg ${
+                className={`w-full flex items-center justify-between px-4 py-3 text-sm text-left hover:bg-paper transition-colors first:rounded-t-sm last:rounded-b-sm ${
                   isSelected ? "bg-paper" : ""
                 }`}
               >
