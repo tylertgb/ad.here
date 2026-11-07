@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PackagesPricesHero from "@/components/pages/packages/PackagesPricesHero";
+import Subscriptions from "@/components/pages/packages/Subscriptions";
 
 export const metadata = {
   title: "Packages & Prices | ad.here",
@@ -13,8 +14,9 @@ export default function PackagesPricesPage() {
       <Header />
       <main>
         <PackagesPricesHero />
+        <Subscriptions />
         
-        {/* Packages & Prices sections will be added here */}
+        {/* Additional Packages & Prices sections will be added here */}
       </main>
       <Footer />
     </>
