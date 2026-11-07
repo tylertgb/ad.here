@@ -55,7 +55,7 @@ export default function PurchaseLEDScreen() {
 
         {/* Purchase Form */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white p-8 lg:p-12 rounded-[28px] shadow-lg">
+          <div className="bg-white p-8 lg:p-12 rounded-lg shadow-lg">
             <div className="space-y-8">
               {/* Your Details */}
               <div>
