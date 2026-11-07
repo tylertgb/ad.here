@@ -4,6 +4,7 @@ import AdOffersHero from "@/components/pages/ad-offers/AdOffersHero";
 import BrandAdSpaces from "@/components/pages/ad-offers/BrandAdSpaces";
 import EventsAdSpaces from "@/components/pages/ad-offers/EventsAdSpaces";
 import ScreenRental from "@/components/pages/ad-offers/ScreenRental";
+import PurchaseLEDScreen from "@/components/pages/ad-offers/PurchaseLEDScreen";
 
 export const metadata = {
   title: "Ad Offers | ad.here",
@@ -19,8 +20,7 @@ export default function AdOffersPage() {
         <BrandAdSpaces />
         <EventsAdSpaces />
         <ScreenRental />
-        
-        {/* Additional Ad Offers sections will be added here */}
+        <PurchaseLEDScreen />
       </main>
       <Footer />
     </>
