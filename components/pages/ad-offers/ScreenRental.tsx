@@ -267,6 +267,9 @@ export default function ScreenRental() {
             <button className="w-full px-8 py-4 bg-coral text-white text-base font-semibold rounded-sm hover:bg-coral-dim transition-colors">
               Request a quote
             </button>
+            <p className="text-sm text-gray-400 text-center mt-4">
+              We'll confirm screen availability, setup logistics, and a quote within 24 hours.
+            </p>
           </div>
         </div>
       </div>
