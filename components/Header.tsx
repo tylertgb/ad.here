@@ -48,11 +48,11 @@ const LINKS = [
     ]
   },
   { 
-    href: "/#contact", 
+    href: "/contact", 
     label: "Contact",
     submenu: [
-      { href: "/#contact", label: "Enquiry Form" },
-      { href: "/#contact", label: "Contact Details" },
+      { href: "/contact#enquiry-form", label: "Enquiry Form" },
+      { href: "/contact#contact-details", label: "Contact Details" },
     ]
   },
 ];

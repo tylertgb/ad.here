@@ -57,7 +57,7 @@ export default function BlogPosts() {
           {BLOG_POSTS.map((post, index) => (
             <article
               key={index}
-              className="bg-gray-50 p-8 rounded-[28px] hover:shadow-lg transition-all duration-300"
+              className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300"
             >
               <div className="mb-4">
                 <span className={`text-xs font-semibold uppercase tracking-wider ${
