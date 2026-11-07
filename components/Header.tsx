@@ -3,20 +3,64 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/#packages", label: "Ad Offers" },
-  { href: "/#packages", label: "Packages & Prices" },
-  { href: "/blog", label: "Blog" },
-  { href: "/#contact", label: "Contact" },
+  { 
+    href: "/", 
+    label: "Home",
+    submenu: [
+      { href: "/#top", label: "Top" },
+      { href: "/#how-it-works", label: "How It Works" },
+      { href: "/#what-you-get", label: "What You Get" },
+      { href: "/#locations", label: "Mall Locations" },
+      { href: "/#why", label: "Why Ad.here" },
+      { href: "/#packages", label: "Launch Offer" },
+    ]
+  },
+  { 
+    href: "/ad-offers", 
+    label: "Ad Offers",
+    submenu: [
+      { href: "/ad-offers#brand-ad-spaces", label: "Brand Ad Spaces" },
+      { href: "/ad-offers#events-ad-spaces", label: "Events Ad Spaces" },
+      { href: "/ad-offers#screen-rental", label: "Ad.here Screen Rental" },
+      { href: "/ad-offers#purchase-screen", label: "Purchase LED Screen" },
+    ]
+  },
+  { 
+    href: "/#packages", 
+    label: "Packages & Prices",
+    submenu: [
+      { href: "/#packages", label: "Subscriptions" },
+      { href: "/#packages", label: "Built for SMEs" },
+      { href: "/#contact", label: "Buy a Slot" },
+    ]
+  },
+  { 
+    href: "/blog", 
+    label: "Blog",
+    submenu: [
+      { href: "/blog#featured", label: "Featured Post" },
+      { href: "/blog#all-posts", label: "All Posts" },
+      { href: "/blog#updates", label: "Get Updates" },
+    ]
+  },
+  { 
+    href: "/#contact", 
+    label: "Contact",
+    submenu: [
+      { href: "/#contact", label: "Enquiry Form" },
+      { href: "/#contact", label: "Contact Details" },
+    ]
+  },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -47,13 +91,45 @@ export default function Header() {
 
         <nav className="hidden lg:flex items-center gap-7">
           {LINKS.map((l) => (
-            <Link
+            <div
               key={l.href}
-              href={l.href}
-              className="text-sm font-semibold text-muted-navy hover:text-off-white transition-colors"
+              className="relative group"
+              onMouseEnter={() => setActiveDropdown(l.label)}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              {l.label}
-            </Link>
+              <Link
+                href={l.href}
+                className="flex items-center gap-1 text-sm font-semibold text-muted-navy hover:text-off-white transition-colors"
+              >
+                {l.label}
+                <ChevronDown size={14} className="opacity-60" />
+              </Link>
+              
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {activeDropdown === l.label && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-navy-soft/70 backdrop-blur-xl border border-white/10 rounded-sm shadow-xl overflow-hidden"
+                  >
+                    <div className="py-0">
+                      {l.submenu.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block px-5 py-2.5 text-sm text-muted-navy hover:text-off-white hover:bg-white/5 transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </nav>
 
@@ -76,6 +152,7 @@ export default function Header() {
         </button>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -93,13 +170,42 @@ export default function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.3 }}
                 >
-                  <Link
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="block py-2.5 text-sm text-muted-navy hover:text-off-white transition-colors"
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === l.label ? null : l.label)}
+                    className="w-full flex items-center justify-between py-2.5 text-sm font-semibold text-muted-navy hover:text-off-white transition-colors"
                   >
                     {l.label}
-                  </Link>
+                    <ChevronDown 
+                      size={16} 
+                      className={`transition-transform ${activeDropdown === l.label ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  
+                  {/* Mobile Submenu */}
+                  <AnimatePresence>
+                    {activeDropdown === l.label && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 py-2 space-y-1">
+                          {l.submenu.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setOpen(false)}
+                              className="block py-2 text-sm text-muted-navy hover:text-off-white transition-colors"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
               ))}
               <motion.div

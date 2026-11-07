@@ -7,21 +7,21 @@ import Link from "next/link";
 const SLIDES = [
   {
     image: "/mall (3).jpg",
-    title: "Your brand, at eye level, inside the malls Accra already walks through.",
-    subtitle: "Indoor LED Network · Accra, Ghana",
-    description: "Ad.here owns and operates indoor LED screens inside Ghana's busiest malls sold as multi-mall bundles, discounted for the brands already trading inside those malls, and doubling as the directory shoppers use to find their way around."
+    title: "Chale, your customers are at the mall. Where are you?",
+    subtitle: "Indoor LED Network · Atlantic Mall & Marina Mall, Accra",
+    description: "Indoor LED screens at prime entrances inside Atlantic Mall and Marina Mall — no skip button, just your brand in front of shoppers in buying mode. Pick a screen, a bundle, an event week, or a subscription, and check out online."
   },
   {
     image: "/mall (2).jpg",
-    title: "Your brand, at eye level, inside the malls Accra already walks through.",
-    subtitle: "Ads that stick, results that last",
-    description: "Ad.here owns and operates indoor LED screens inside Ghana's busiest malls sold as multi-mall bundles, discounted for the brands already trading inside those malls, and doubling as the directory shoppers use to find their way around."
+    title: "Chale, your customers are at the mall. Where are you?",
+    subtitle: "Indoor LED Network · Atlantic Mall & Marina Mall, Accra",
+    description: "Indoor LED screens at prime entrances inside Atlantic Mall and Marina Mall — no skip button, just your brand in front of shoppers in buying mode. Pick a screen, a bundle, an event week, or a subscription, and check out online."
   },
   {
     image: "/2.jpg",
-    title: "Your brand, at eye level, inside the malls Accra already walks through.",
-    subtitle: "Transparent. Affordable. Results-Driven",
-    description: "Ad.here owns and operates indoor LED screens inside Ghana's busiest malls sold as multi-mall bundles, discounted for the brands already trading inside those malls, and doubling as the directory shoppers use to find their way around."
+    title: "Chale, your customers are at the mall. Where are you?",
+    subtitle: "Indoor LED Network · Atlantic Mall & Marina Mall, Accra",
+    description: "Indoor LED screens at prime entrances inside Atlantic Mall and Marina Mall — no skip button, just your brand in front of shoppers in buying mode. Pick a screen, a bundle, an event week, or a subscription, and check out online."
   }
 ];
 
@@ -52,7 +52,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="relative h-screen min-h-175 overflow-hidden bg-navy">
+    <section id="top" className="relative h-screen min-h-175 overflow-hidden bg-navy">
       {/* Slides */}
       {SLIDES.map((slide, index) => (
         <div

@@ -2,9 +2,11 @@ import Header from "@/components/Header";
 import HeroSlider from "@/components/HeroSlider";
 import Locate from "@/components/Locate";
 import HowItWorks from "@/components/HowItWorks";
+import WhatYouGet from "@/components/WhatYouGet";
 import Packages from "@/components/Packages";
 import WhyAdhere from "@/components/WhyAdhere";
 import Locations from "@/components/Locations";
+import ExploreAdhere from "@/components/ExploreAdhere";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -110,6 +112,8 @@ export default function Home() {
         
         <HowItWorks />
         
+        <WhatYouGet />
+        
         {/* Indoor Network Section */}
         <section id="network" className="py-24 sm:py-32 bg-white">
           <div className="wrap">
@@ -185,6 +189,8 @@ export default function Home() {
         <Packages />
         
         <WhyAdhere />
+        
+        <ExploreAdhere />
         
         {/* Brand Guide Section */}
         <section className="py-24 sm:py-32 bg-gray-50">
