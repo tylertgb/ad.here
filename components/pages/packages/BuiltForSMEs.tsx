@@ -42,9 +42,9 @@ export default function BuiltForSMEs() {
             return (
               <div
                 key={feature.title}
-                className="p-8 bg-white rounded-[28px] hover:shadow-lg transition-all duration-300"
+                className="p-8 bg-white rounded-lg hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-sm bg-coral/10 flex items-center justify-center mb-6">
                   <Icon className="w-6 h-6 text-coral" strokeWidth={2} />
                 </div>
 

@@ -11,7 +11,6 @@ const LINKS = [
     href: "/", 
     label: "Home",
     submenu: [
-      { href: "/#top", label: "Top" },
       { href: "/#how-it-works", label: "How It Works" },
       { href: "/#what-you-get", label: "What You Get" },
       { href: "/#locations", label: "Mall Locations" },

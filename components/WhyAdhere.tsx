@@ -1,9 +1,21 @@
 import SectionHeading from "./SectionHeading";
+import Image from "next/image";
 
 export default function WhyAdhere() {
   return (
-    <section id="why" className="py-24 sm:py-32 bg-navy text-white">
-      <div className="wrap">
+    <section id="why" className="relative py-24 sm:py-32 bg-navy text-white overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-10">
+        <Image
+          src="/malls/panda-1.jpg"
+          alt="Background"
+          fill
+          className="object-cover"
+          quality={90}
+        />
+      </div>
+      
+      <div className="wrap relative z-10">
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center mb-16">
           <div className="inline-block mb-6 px-4 py-1.5 bg-white/10 rounded-full">
             <p className="text-xs uppercase tracking-widest text-white font-semibold">
