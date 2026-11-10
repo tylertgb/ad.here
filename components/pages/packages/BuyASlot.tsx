@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { Check, AlertCircle } from "lucide-react";
 
 const PAYSTACK_LINK = "https://paystack.shop/pay/ly70n531xq";
@@ -38,8 +37,6 @@ const TERMS = [
 ];
 
 export default function BuyASlot() {
-  const searchParams = useSearchParams();
-
   const [selectedScreens, setSelectedScreens] = useState<string[]>([]);
   const [billingPeriod, setBillingPeriod] = useState<"weekly" | "monthly">("monthly");
   const [selectedTerm, setSelectedTerm] = useState("monthly");
@@ -47,12 +44,13 @@ export default function BuyASlot() {
 
   // Pre-select term from URL param (e.g. from Subscriptions page)
   useEffect(() => {
-    const term = searchParams.get("term");
+    const params = new URLSearchParams(window.location.search);
+    const term = params.get("term");
     if (term && TERMS.find((t) => t.id === term)) {
       setSelectedTerm(term);
       setBillingPeriod("monthly");
     }
-  }, [searchParams]);
+  }, []);
 
   // Form fields
   const [firstName, setFirstName] = useState("");
