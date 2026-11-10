@@ -111,7 +111,7 @@ export default function Packages() {
                 ))}
               </ul>
               <a
-                href="/packages-prices"
+                href="/packages-bundles"
                 className={`mt-2 inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
                   p.featured
                     ? "bg-coral text-white hover:bg-coral-dim"

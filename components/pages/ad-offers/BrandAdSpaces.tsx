@@ -230,7 +230,7 @@ export default function BrandAdSpaces() {
 
           <p className="text-center text-sm text-slate-600">
             All prices tax inclusive. Want to stretch your rate further with a 3, 6, or 12-month term? See{" "}
-            <Link href="/packages-prices" className="text-coral hover:text-coral-dim transition-colors font-semibold">
+            <Link href="/packages-bundles" className="text-coral hover:text-coral-dim transition-colors font-semibold">
               Packages & Prices →
             </Link>
           </p>

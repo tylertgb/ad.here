@@ -22,7 +22,7 @@ const COLUMNS = [
   {
     title: "Company",
     links: [
-      { label: "Packages & prices", href: "/packages-prices" },
+      { label: "Packages & prices", href: "/packages-bundles" },
       { label: "Blog", href: "/blog" },
       { label: "adhereghana@gmail.com", href: "mailto:adhereghana@gmail.com" },
       { label: "055 860 7807", href: "tel:+233558607807" },

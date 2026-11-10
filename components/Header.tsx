@@ -135,7 +135,7 @@ export default function Header() {
 
         <div className="hidden lg:block">
           <Link
-            href="/packages-prices#buy-a-slot"
+            href="/packages-bundles#buy-a-slot"
             className="inline-flex items-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
           >
             Buy a Slot
@@ -214,7 +214,7 @@ export default function Header() {
                 transition={{ delay: LINKS.length * 0.05 + 0.1, duration: 0.3 }}
               >
                 <Link
-                  href="/packages-prices#buy-a-slot"
+                  href="/packages-bundles#buy-a-slot"
                   onClick={() => setOpen(false)}
                   className="mt-2 inline-flex justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-dim transition-colors"
                 >

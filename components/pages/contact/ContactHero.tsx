@@ -25,7 +25,7 @@ export default function ContactHero() {
           </h1>
           <p className="text-lg text-gray-300 leading-relaxed">
             Send a few details and we'll reply with availability, pricing, and a schedule. Prefer to build your own package?{" "}
-            <Link href="/packages-prices#buy-a-slot" className="text-coral hover:text-coral-dim transition-colors font-semibold">
+            <Link href="/packages-bundles#buy-a-slot" className="text-coral hover:text-coral-dim transition-colors font-semibold">
               Buy a slot directly →
             </Link>
           </p>

@@ -96,7 +96,7 @@ export default function HeroSlider() {
               
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="/packages-prices"
+                  href="/packages-bundles"
                   className="group inline-flex items-center px-7 py-3.5 bg-coral text-white text-base font-semibold rounded-full hover:bg-coral-dim transition-all duration-300 hover:shadow-xl hover:shadow-coral/20"
                 >
                   See Packages &amp; Bundles

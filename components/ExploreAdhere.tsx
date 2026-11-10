@@ -15,7 +15,7 @@ const EXPLORE_CARDS = [
     title: "Compare subscription terms and check out",
     description: "3, 6, and 12-month terms with stacking discounts, plus live checkout — see your exact rate before you commit.",
     linkText: "See pricing",
-    linkHref: "/packages-prices",
+    linkHref: "/packages-bundles",
   },
   {
     label: "BLOG",
