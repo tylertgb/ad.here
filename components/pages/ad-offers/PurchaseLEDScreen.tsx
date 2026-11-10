@@ -188,7 +188,7 @@ export default function PurchaseLEDScreen() {
                   Request a quote
                 </button>
                 <p className="text-sm text-slate-500 text-center mt-4">
-                  Our team will follow up with configuration options and pricing - no commitment required.
+                  Our team will follow up with configuration options and pricing.
                 </p>
               </div>
             </div>

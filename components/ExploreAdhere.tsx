@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const EXPLORE_CARDS = [
@@ -27,8 +28,8 @@ const EXPLORE_CARDS = [
 
 export default function ExploreAdhere() {
   return (
-    <section className="py-24 sm:py-32 bg-gray-50">
-      <div className="wrap">
+    <section className="relative bg-gray-50 overflow-visible">
+      <div className="wrap relative py-24 sm:py-32 overflow-hidden">
         <div className="max-w-3xl mb-16">
           <div className="inline-block mb-6 px-4 py-1.5 bg-navy/5 rounded-full">
             <p className="text-xs uppercase tracking-widest text-navy font-semibold">
@@ -40,7 +41,7 @@ export default function ExploreAdhere() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 md:max-w-3xl justify-center gap-6 relative z-5">
           {EXPLORE_CARDS.map((card) => (
             <div
               key={card.label}
@@ -69,6 +70,18 @@ export default function ExploreAdhere() {
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* Mascot Character - Enterprise Lady (positioned absolutely) */}
+        <div className="hidden lg:block absolute bottom-0 -right-40 md:-right-10 w-80 lg:w-[40%] pointer-events-none z-0">
+          <Image
+            src="/play-callout.png"
+            alt="ad.here enterprise mascot"
+            width={484}
+            height={484}
+            className="w-full h-auto"
+            priority
+          />
         </div>
       </div>
     </section>

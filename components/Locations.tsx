@@ -52,7 +52,7 @@ const MALLS = [
 
 export default function Locations() {
   return (
-    <section id="locations" className="py-24 sm:py-32 bg-gray-50">
+    <section id="locations" className="py-24 sm:py-32 bg-white">
       <div className="wrap">
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center mb-16">
           <div className="inline-block mb-6 px-4 py-1.5 bg-navy/5 rounded-full">
