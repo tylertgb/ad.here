@@ -96,7 +96,7 @@ export default function HeroSlider() {
               
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="#packages"
+                  href="/packages-prices"
                   className="group inline-flex items-center px-7 py-3.5 bg-coral text-white text-base font-semibold rounded-full hover:bg-coral-dim transition-all duration-300 hover:shadow-xl hover:shadow-coral/20"
                 >
                   See Packages &amp; Bundles
@@ -105,10 +105,10 @@ export default function HeroSlider() {
                   </svg>
                 </Link>
                 <Link
-                  href="#network"
+                  href="/add-offers"
                   className="inline-flex items-center px-7 py-3.5 bg-white/5 backdrop-blur-sm border-2 border-white/30 text-white text-base font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
-                  View Mall Network
+                  See Add Offers
                 </Link>
               </div>
             </div>
