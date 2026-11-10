@@ -76,7 +76,7 @@ export default function ScreenRental() {
                 key={feature.title}
                 className="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-sm bg-coral/10 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-coral" strokeWidth={2} />
                 </div>
                 <h3 className="text-base font-semibold text-navy mb-2">
@@ -104,7 +104,7 @@ export default function ScreenRental() {
             {DISPLAY_OPTIONS.map((option) => (
               <div
                 key={option.title}
-                className={`p-6 rounded-lg transition-all duration-300 ${
+                className={`p-6 rounded-sm transition-all duration-300 ${
                   option.recommended
                     ? "bg-coral/5 border-2 border-coral"
                     : "bg-gray-50 border-2 border-transparent hover:border-slate-200"

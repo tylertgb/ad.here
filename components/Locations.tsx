@@ -4,7 +4,28 @@ import SectionHeading from "./SectionHeading";
 
 const MALLS = [
   { 
-    city: "Accra", 
+    city: "Accra - Atomic Roundabout", 
+    name: "Atlantic Mall",
+    phases: [
+      {
+        name: "Phase 1",
+        location: "Ground floor · Panda Mart entrance",
+        monthlyPrice: "₵3,500",
+        eventPrice: "₵950",
+      },
+      {
+        name: "Phase 2", 
+        location: "1st floor · Elevator entrance",
+        monthlyPrice: "₵3,500",
+        eventPrice: "₵950",
+      }
+    ],
+    screens: "2 screens",
+    status: "Live",
+    image: "/malls/atlanticmall-main.jpg"
+  },
+  { 
+    city: "Accra - Airport", 
     name: "Marina Mall", 
     location: "Supermarket walkway entrance",
     screens: "1 screen",
@@ -13,27 +34,7 @@ const MALLS = [
     status: "Live",
     image: "/malls/marinamall-main.png"
   },
-  { 
-    city: "Accra", 
-    name: "Atlantic Mall - Phase 1", 
-    location: "Ground floor · Panda Mart entrance",
-    screens: "1 screen",
-    monthlyPrice: "₵3,500",
-    eventPrice: "₵950",
-    status: "Live",
-    image: "/malls/atlanticmall-main.jpg"
-  },
   // Coming soon
-  // { 
-  //   city: "Accra", 
-  //   name: "Atlantic Mall - Phase 2", 
-  //   location: "1st floor · Game It Up entrance",
-  //   screens: "1 screen",
-  //   monthlyPrice: "₵3,500",
-  //   eventPrice: "₵950",
-  //   status: "Live",
-  //   image: "/malls/atlanticmall-main.jpg"
-  // },
   // { 
   //   city: "Kumasi", 
   //   name: "Kumasi City Mall", 
@@ -72,7 +73,7 @@ export default function Locations() {
           {MALLS.map((mall, index) => (
             <div
               key={mall.name}
-              className="relative group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              className="relative group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-80 lg:h-96 overflow-hidden">
                 <Image
@@ -81,7 +82,7 @@ export default function Locations() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-navy/90 via-navy/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent" />
                 <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
                   <MapPin size={14} className="text-coral" />
                   <span className="text-xs font-semibold text-white uppercase tracking-wide">{mall.city}</span>
@@ -94,17 +95,40 @@ export default function Locations() {
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-semibold text-navy mb-2">{mall.name}</h3>
-                <p className="text-sm text-slate-500 mb-4">{mall.location}</p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-600">Monthly</span>
-                    <span className="text-coral font-semibold text-lg">{mall.monthlyPrice}/month</span>
+                
+                {/* If mall has phases, show both */}
+                {mall.phases ? (
+                  <div className="space-y-4 mb-4">
+                    {mall.phases.map((phase, idx) => (
+                      <div key={phase.name} className={`${idx > 0 ? 'pt-4 border-t border-slate-200' : ''}`}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-sm font-semibold text-navy">{phase.name}</span>
+                          <span className="text-xs text-slate-500">·</span>
+                          <span className="text-xs text-slate-500">{phase.location}</span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-slate-600">Monthly: <span className="text-coral font-semibold">{phase.monthlyPrice}</span></span>
+                          <span className="text-slate-600">Event: <span className="text-coral font-semibold">{phase.eventPrice}</span></span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-600">Event week</span>
-                    <span className="text-coral font-semibold text-lg">{mall.eventPrice}/week</span>
-                  </div>
-                </div>
+                ) : (
+                  // Single location mall
+                  <>
+                    <p className="text-sm text-slate-500 mb-4">{mall.location}</p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-slate-600">Monthly</span>
+                        <span className="text-coral font-semibold text-lg">{mall.monthlyPrice}/month</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-slate-600">Event week</span>
+                        <span className="text-coral font-semibold text-lg">{mall.eventPrice}/week</span>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           ))}

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AdOffersHero from "@/components/pages/ad-offers/AdOffersHero";
+import ScreensShowcase from "@/components/pages/ad-offers/ScreensShowcase";
 import BrandAdSpaces from "@/components/pages/ad-offers/BrandAdSpaces";
 import EventsAdSpaces from "@/components/pages/ad-offers/EventsAdSpaces";
 import ScreenRental from "@/components/pages/ad-offers/ScreenRental";
@@ -17,6 +18,7 @@ export default function AdOffersPage() {
       <Header />
       <main>
         <AdOffersHero />
+        <ScreensShowcase />
         <BrandAdSpaces />
         <EventsAdSpaces />
         <ScreenRental />

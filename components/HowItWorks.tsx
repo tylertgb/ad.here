@@ -72,7 +72,7 @@ export default function HowItWorks() {
 
         <div className="mt-12 text-center">
           <a
-            href="#packages"
+            href="/packages-bundles"
             className="inline-flex items-center px-7 py-3.5 bg-coral text-white text-base font-semibold rounded-full hover:bg-coral-dim transition-colors"
           >
             View Packages
