@@ -73,7 +73,7 @@ export default function Locations() {
           {MALLS.map((mall, index) => (
             <div
               key={mall.name}
-              className="relative group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              className="relative group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-80 lg:h-96 overflow-hidden">
                 <Image
@@ -82,7 +82,7 @@ export default function Locations() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-navy/90 via-navy/40 to-transparent" />
                 <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
                   <MapPin size={14} className="text-coral" />
                   <span className="text-xs font-semibold text-white uppercase tracking-wide">{mall.city}</span>

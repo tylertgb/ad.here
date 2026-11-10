@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 const SUBSCRIPTION_TIERS = [
   {
     duration: "3 months",
+    termId: "3-months",
     subtitle: "On any single screen or bundle",
     discount: "-5%",
     discountText: "off your monthly rate",
@@ -15,6 +16,7 @@ const SUBSCRIPTION_TIERS = [
   },
   {
     duration: "6 months",
+    termId: "6-months",
     subtitle: "On any single screen or bundle",
     discount: "-10%",
     discountText: "off your monthly rate",
@@ -27,6 +29,7 @@ const SUBSCRIPTION_TIERS = [
   },
   {
     duration: "12 months",
+    termId: "12-months",
     subtitle: "On any single screen or bundle",
     discount: "-15%",
     discountText: "off your monthly rate",
@@ -90,13 +93,15 @@ export default function Subscriptions() {
                 ))}
               </ul>
 
-              <button className={`w-full px-6 py-3 text-sm font-semibold rounded-full transition-colors ${
-                tier.highlighted
-                  ? "bg-coral text-white hover:bg-coral-dim"
-                  : "bg-coral text-white hover:bg-coral-dim"
-              }`}>
+              <Link
+                href={`/packages-prices#buy-a-slot?term=${tier.termId}`}
+                className={`w-full block text-center px-6 py-3 text-sm font-semibold rounded-full transition-colors ${
+                  tier.highlighted
+                    ? "bg-coral text-white hover:bg-coral-dim"
+                    : "bg-coral text-white hover:bg-coral-dim"
+                }`}>
                 Choose this term
-              </button>
+              </Link>
             </div>
           ))}
         </div>

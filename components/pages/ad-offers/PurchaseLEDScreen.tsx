@@ -1,5 +1,9 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import Select from "@/components/ui/Select";
+
+const WHATSAPP_NUMBER = "233558607807";
 
 const SCREEN_LOCATIONS = [
   "Retail store",
@@ -35,6 +39,54 @@ const BUDGET_RANGES = [
 ];
 
 export default function PurchaseLEDScreen() {
+  const [fullName, setFullName] = useState("");
+  const [business, setBusiness] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [screenLocation, setScreenLocation] = useState("");
+  const [screenSize, setScreenSize] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [timeline, setTimeline] = useState("");
+  const [budget, setBudget] = useState("");
+  const [notes, setNotes] = useState("");
+  const [error, setError] = useState("");
+
+  const isFormValid =
+    fullName.trim() !== "" &&
+    phone.trim() !== "" &&
+    screenLocation !== "" &&
+    screenSize !== "";
+
+  const handleSubmit = () => {
+    if (!isFormValid) {
+      setError("Please fill in all required fields.");
+      return;
+    }
+    setError("");
+
+    const message = [
+      `*LED Screen Purchase Enquiry*`,
+      ``,
+      `*Name:* ${fullName}`,
+      business ? `*Business:* ${business}` : null,
+      `*Phone:* ${phone}`,
+      email ? `*Email:* ${email}` : null,
+      ``,
+      `*Screen Requirements*`,
+      `*Location type:* ${screenLocation}`,
+      `*Size needed:* ${screenSize}`,
+      quantity ? `*Quantity:* ${quantity}` : null,
+      timeline ? `*Timeline:* ${timeline}` : null,
+      budget ? `*Budget:* ${budget}` : null,
+      notes ? `*Notes:* ${notes}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section id="purchase-screen" className="py-24 sm:py-32 bg-gray-50">
       <div className="wrap">
@@ -57,50 +109,49 @@ export default function PurchaseLEDScreen() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white p-8 lg:p-12 rounded-lg shadow-lg">
             <div className="space-y-8">
+
               {/* Your Details */}
               <div>
-                <h3 className="text-base font-bold text-gold uppercase tracking-wide mb-6">
-                  Your Details
-                </h3>
+                <h3 className="text-base font-bold text-gold uppercase tracking-wide mb-6">Your Details</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Full name
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Full name <span className="text-coral">*</span></label>
                     <input
                       type="text"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Kofi Mensah"
-                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Business name
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Business name</label>
                     <input
                       type="text"
+                      value={business}
+                      onChange={(e) => setBusiness(e.target.value)}
                       placeholder="e.g. Mensah Retail Group"
-                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Phone / WhatsApp
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Phone / WhatsApp <span className="text-coral">*</span></label>
                     <input
                       type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       placeholder="024 000 0000"
-                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Email
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
                     <input
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@brand.com"
-                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral"
                     />
                   </div>
                 </div>
@@ -108,84 +159,87 @@ export default function PurchaseLEDScreen() {
 
               {/* What You're Looking For */}
               <div>
-                <h3 className="text-base font-bold text-gold uppercase tracking-wide mb-6">
-                  What You're Looking For
-                </h3>
+                <h3 className="text-base font-bold text-gold uppercase tracking-wide mb-6">What You're Looking For</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Where will it go?
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Where will it go? <span className="text-coral">*</span></label>
                     <Select
                       options={SCREEN_LOCATIONS}
                       placeholder="Select location type"
+                      value={screenLocation}
+                      onChange={setScreenLocation}
                       className="w-full px-4 py-3 border border-slate-200 rounded-sm"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Approximate size needed
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Approximate size needed <span className="text-coral">*</span></label>
                     <Select
                       options={SCREEN_SIZES}
                       placeholder="Select screen size"
+                      value={screenSize}
+                      onChange={setScreenSize}
                       className="w-full px-4 py-3 border border-slate-200 rounded-sm"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Quantity needed
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Quantity needed</label>
                     <input
                       type="number"
+                      value={quantity}
+                      onChange={(e) => setQuantity(e.target.value)}
                       placeholder="e.g. 1"
-                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Timeline
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Timeline</label>
                     <Select
                       options={TIMELINES}
                       placeholder="When do you need it?"
+                      value={timeline}
+                      onChange={setTimeline}
                       className="w-full px-4 py-3 border border-slate-200 rounded-sm"
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Budget range (optional)
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Budget range (optional)</label>
                     <Select
                       options={BUDGET_RANGES}
                       placeholder="Select budget range"
+                      value={budget}
+                      onChange={setBudget}
                       className="w-full px-4 py-3 border border-slate-200 rounded-sm"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Anything Else? */}
+              {/* Anything Else */}
               <div>
-                <h3 className="text-base font-bold text-gold uppercase tracking-wide mb-6">
-                  Anything Else?
-                </h3>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Additional notes
-                  </label>
-                  <textarea
-                    rows={4}
-                    placeholder="Indoor or outdoor, installation help needed, existing setup you're replacing, etc."
-                    className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent resize-none"
-                  />
-                </div>
+                <h3 className="text-base font-bold text-gold uppercase tracking-wide mb-6">Anything Else?</h3>
+                <textarea
+                  rows={4}
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="Indoor or outdoor, installation help needed, existing setup you're replacing, etc."
+                  className="w-full px-4 py-3 border border-slate-200 rounded-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-coral resize-none"
+                />
               </div>
 
-              {/* Submit Button */}
+              {/* Error */}
+              {error && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-sm">
+                  <p className="text-xs text-red-500">{error}</p>
+                </div>
+              )}
+
+              {/* Submit */}
               <div className="pt-4">
-                <button className="w-full px-8 py-4 bg-coral text-white text-base font-semibold rounded-sm hover:bg-coral-dim transition-colors">
-                  Request a quote
+                <button
+                  onClick={handleSubmit}
+                  className="w-full px-8 py-4 bg-coral text-white text-base font-semibold rounded-sm hover:bg-coral-dim transition-colors"
+                >
+                  Send via WhatsApp
                 </button>
                 <p className="text-sm text-slate-500 text-center mt-4">
                   Our team will follow up with configuration options and pricing.
