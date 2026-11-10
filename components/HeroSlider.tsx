@@ -105,7 +105,7 @@ export default function HeroSlider() {
                   </svg>
                 </Link>
                 <Link
-                  href="/add-offers"
+                  href="/ad-offers"
                   className="inline-flex items-center px-7 py-3.5 bg-white/5 backdrop-blur-sm border-2 border-white/30 text-white text-base font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
                   See Add Offers

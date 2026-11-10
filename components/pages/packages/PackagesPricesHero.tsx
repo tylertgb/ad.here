@@ -24,7 +24,7 @@ export default function PackagesPricesHero() {
               Home
             </Link>
             <span>/</span>
-            <span className="text-gray-300">Packages & Prices</span>
+            <span className="text-gray-300">Packages & Bundles</span>
           </nav>
         </div>
 
@@ -32,7 +32,7 @@ export default function PackagesPricesHero() {
         <div className="max-w-4xl">
           <div className="inline-block mb-6 px-4 py-1.5 bg-gold/10 backdrop-blur-sm rounded-full">
             <p className="text-xs uppercase tracking-widest text-gold font-semibold">
-              Packages & Prices
+              Packages & Bundles
             </p>
           </div>
 

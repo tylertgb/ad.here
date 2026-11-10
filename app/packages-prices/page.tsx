@@ -6,7 +6,7 @@ import BuiltForSMEs from "@/components/pages/packages/BuiltForSMEs";
 import BuyASlot from "@/components/pages/packages/BuyASlot";
 
 export const metadata = {
-  title: "Packages & Prices | ad.here",
+  title: "Packages & Bundles | ad.here",
   description: "Stay longer, pay less - then check out right here. Lock any screen or bundle into a 3, 6, or 12-month term for a bigger discount.",
 };
 
