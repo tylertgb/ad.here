@@ -6,7 +6,6 @@ import WhyAdhere from "@/components/WhyAdhere";
 import Locations from "@/components/Locations";
 import ExploreAdhere from "@/components/ExploreAdhere";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -44,12 +43,12 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Locations />
       
         <HowItWorks />
         
         <WhatYouGet />
-        
-        <Locations />
         
         <WhyAdhere />
         
